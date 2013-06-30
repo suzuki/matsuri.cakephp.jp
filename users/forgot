@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	<title>CakeMatsuri: October 30-31, 2009 - パスワードを忘れた方はこちら。</title>
+	<link rel="stylesheet" type="text/css" href="/themed/tokyo09/css/styles.css" /><link href="favicon.ico" type="image/x-icon" rel="icon" /><link href="favicon.ico" type="image/x-icon" rel="shortcut icon" /><link href="http://matsuri.cakephp.jp/posts.rss" type="application/rss+xml" rel="alternate" title="CakeMatsuri: 最新情報" />
+	<script type="text/javascript" src="/js/jquery-1.3.1.js"></script>
+	<script type="text/javascript" src="/themed/tokyo09/js/application.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			setInterval(
+				function() {
+					active = $('#slideshow img.active');
+					active = active.length ? active : $('#slideshow img:last');
+					next = active.next().length ? active.next() : $('#slideshow img:first');
+					active.addClass('previous');
+					anim = [{ opacity: 0.0 }, { opacity: 1.0 }];
+
+					next.css(anim[0]).addClass('active').animate(anim[1], 1000, function() {
+						active.removeClass('active previous');
+					});
+				},
+				4000
+			);
+		});
+	</script>
+</head>
+<body>
+<div class="container">
+	<div id="sites-nav">
+	<ul class="navigation main">
+		<li><a href="http://cakephp.jp">CakePHP</a></li>
+		<li><a href="http://bakery.cakephp.org">Bakery</a></li>
+		<li><a href="http://api.cakephp.org">API</a></li>
+		<li><a href="http://manual.cakephp.org">Manual</a></li>
+		<li><a href="http://live.cakephp.org">The Show</a></li>
+		<li><a href="http://trac.cakephp.org">Development</a></li>
+	</ul>
+
+	<ul class="navigation sub">
+							<li><a href="/lang/change/lang:eng">English</a></li>
+									<li><a href="/lang/change/lang:jpn">日本語</a></li>
+				 		<li><a href="http://cakephp.org">About CakePHP</a></li>
+	</ul>
+	<div class="clearing"></div>
+</div>
+	<ul class="navigation-menu">
+		
+	<li><a href="/" id="Navホーム">ホーム</a></li>
+	<li><a href="/registrations/add" id="Nav参加登録">参加登録</a></li>
+	<li><a href="/pages/talks" id="Navカンファレンス">カンファレンス</a></li>
+	<li><a href="/pages/workshop" id="Navワークショップ">ワークショップ</a></li>
+	<li><a href="/pages/travel" id="Nav会場案内">会場案内</a></li>
+	<li><a href="/pages/aboutus" id="Nav青年団">青年団</a></li>	</ul>
+
+	<div id="slideshow">
+		<img src="/themed/tokyo09/img/photos/1/1.jpg" alt="1" /><img src="/themed/tokyo09/img/photos/1/2.jpg" alt="2" /><img src="/themed/tokyo09/img/photos/1/3.jpg" alt="3" /><img src="/themed/tokyo09/img/photos/1/4.jpg" alt="4" /><img src="/themed/tokyo09/img/photos/1/5.jpg" alt="5" /><img src="/themed/tokyo09/img/photos/1/6.jpg" alt="6" /><img src="/themed/tokyo09/img/photos/1/7.jpg" alt="7" /><img src="/themed/tokyo09/img/photos/1/8.jpg" alt="8" /><img src="/themed/tokyo09/img/photos/1/9.jpg" alt="9" /><img src="/themed/tokyo09/img/photos/1/10.jpg" alt="10" />	</div>
+
+	<div id="newsfeed">
+		<h3>news</h3>
+
+		
+			</div>
+	
+	<div class="content" id="content">
+		<div class="users form">
+<p>登録したメールアドレスを記入し、Submitボタンを押してください。パスワード再登録用のURLを含めたメールが送信されますので、そこから再度、パスワードをご登録下さい。</p>
+<form id="UserForgotForm" method="post" action="/users/forgot"><fieldset style="display:none;"><input type="hidden" name="_method" value="POST" /><input type="hidden" name="data[_Token][key]" value="fd6d78b2c1afc02034234c421dfc1aada81ce92e" id="Token687843491" /></fieldset><div class="input text required"><label for="UserEmail">Email</label><input name="data[User][email]" type="text" maxlength="255" value="" id="UserEmail" /></div><div class="submit"><input type="submit" value="Submit" /></div><fieldset style="display:none;"><input type="hidden" name="data[_Token][fields]" value="87dc21848668adb46f4ac4cc63f2d6258be466f3%3An%3A0%3A%7B%7D" id="TokenFields645908941" /></fieldset></form></div>	</div>
+	<div class="sponsors">
+		<p class="by">
+	<div class="border border-left">&nbsp;</div>
+	<span class="by">Proudly Sponsored By</span>
+	<div class="border border-right">&nbsp;</div>
+</p>
+<div class="sponsor-images">
+
+
+	<a href="http://cakedc.com"><img src="/themed/tokyo09/img/sponsors/cake_development_corporation.png" width="200" height="69" class="cakedc" alt="" /></a>
+        <br />
+    <div class="border-left">
+	<a href="http://www.e-2.co.jp/index.html"><img src="/themed/tokyo09/img/sponsors/e2_200px.png" width="200" height="99" alt="" /></a>	<br />
+	<a href="http://www.e-2.co.jp/index.html">株式会社 E2</a>	<br /><br />
+	<a href="http://fusic.co.jp/"><img src="/themed/tokyo09/img/sponsors/fusic_logo.png" width="200" height="100" alt="" /></a>	<br />
+	<a href="http://fusic.co.jp/">株式会社 Fusic</a>	<br /><br />
+	<a href="http://www.affilorama.com/"><img src="/themed/tokyo09/img/sponsors/affilorama_200px.jpg" width="200" height="40" alt="" /></a>	<br />
+	<a href="http://www.affilorama.com/">Affiliate Marketing</a>        <br /><br />
+	<a href="http://www.contents-one.co.jp/"><img src="/themed/tokyo09/img/sponsors/contentsone_200px.jpg" alt="" /></a>	<br />
+	<a href="http://www.contents-one.co.jp/">株式会社コンテンツワン</a>		<br /><br />
+    </div>
+
+    <div class="border-right">
+	<a href="http://www.1x1.jp/"><img src="/themed/tokyo09/img/sponsors/1x1_200px.png" width="200" height="95" alt="" /></a>	<br />
+	<a href="http://www.1x1.jp/">１ｘ１株式会社</a>	<br /><br />
+	<a href="http://www.hituji.jp/"><img src="/themed/tokyo09/img/sponsors/hituji-logo.gif" width="200" height="40" alt="" /></a>	<br />
+	<a href="http://www.hituji-inc.co.jp/">ひつじインキュベーション・スクウェア</a>
+
+        <br /><br />
+	<a href="http://www.mitsue.co.jp/"><img src="/themed/tokyo09/img/sponsors/mitsue_links.gif" alt="" /></a>	<br />
+	<a href="http://www.mitsue.co.jp/">株式会社 ミツエーリンクス</a>        <br /><br />
+	<a href="http://www.esm.co.jp/"><img src="/themed/tokyo09/img/sponsors/eiwa-logo.gif" alt="" /></a>	<br />
+	<a href="http://www.esm.co.jp/">株式会社 永和システムマネジメント</a>		<br /><br />
+   </div>
+
+	</p>
+</div>
+	</div>
+	<div class="footer">
+				
+		<a href="/pages/badges" class="important">Badges and Banners: Help Promote CakeMatsuri</a>		<br />
+		&copy; 2009, <a href="http://cakephp.jp">CakePHP users in japan</a>		- Powered by <a href="http://cakephp.org">CakePHP</a> 1.2.4.8284	</div>
+</div>
+<script type="text/javascript">
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+	try {
+		var pageTracker = _gat._getTracker("UA-1296428-3");
+		pageTracker._trackPageview();
+	} catch(err) {
+	}
+</script>
+</body>
+</html>

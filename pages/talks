@@ -1,0 +1,284 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	<title>CakeMatsuri: October 30-31, 2009 - Events Schedule</title>
+	<link rel="stylesheet" type="text/css" href="/themed/tokyo09/css/styles.css" /><link href="favicon.ico" type="image/x-icon" rel="icon" /><link href="favicon.ico" type="image/x-icon" rel="shortcut icon" /><link href="http://matsuri.cakephp.jp/posts.rss" type="application/rss+xml" rel="alternate" title="CakeMatsuri: 最新情報" />
+	<script type="text/javascript" src="/js/jquery-1.3.1.js"></script>
+	<script type="text/javascript" src="/themed/tokyo09/js/application.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			setInterval(
+				function() {
+					active = $('#slideshow img.active');
+					active = active.length ? active : $('#slideshow img:last');
+					next = active.next().length ? active.next() : $('#slideshow img:first');
+					active.addClass('previous');
+					anim = [{ opacity: 0.0 }, { opacity: 1.0 }];
+
+					next.css(anim[0]).addClass('active').animate(anim[1], 1000, function() {
+						active.removeClass('active previous');
+					});
+				},
+				4000
+			);
+		});
+	</script>
+</head>
+<body>
+<div class="container">
+	<div id="sites-nav">
+	<ul class="navigation main">
+		<li><a href="http://cakephp.jp">CakePHP</a></li>
+		<li><a href="http://bakery.cakephp.org">Bakery</a></li>
+		<li><a href="http://api.cakephp.org">API</a></li>
+		<li><a href="http://manual.cakephp.org">Manual</a></li>
+		<li><a href="http://live.cakephp.org">The Show</a></li>
+		<li><a href="http://trac.cakephp.org">Development</a></li>
+	</ul>
+
+	<ul class="navigation sub">
+							<li><a href="/lang/change/lang:eng">English</a></li>
+									<li><a href="/lang/change/lang:jpn">日本語</a></li>
+				 		<li><a href="http://cakephp.org">About CakePHP</a></li>
+	</ul>
+	<div class="clearing"></div>
+</div>
+	<ul class="navigation-menu">
+		
+	<li><a href="/" id="Navホーム">ホーム</a></li>
+	<li><a href="/registrations/add" id="Nav参加登録">参加登録</a></li>
+	<li><a href="/pages/talks" id="Navカンファレンス">カンファレンス</a></li>
+	<li><a href="/pages/workshop" id="Navワークショップ">ワークショップ</a></li>
+	<li><a href="/pages/travel" id="Nav会場案内">会場案内</a></li>
+	<li><a href="/pages/aboutus" id="Nav青年団">青年団</a></li>	</ul>
+
+	<div id="slideshow">
+		<img src="/themed/tokyo09/img/photos/1/1.jpg" alt="1" /><img src="/themed/tokyo09/img/photos/1/2.jpg" alt="2" /><img src="/themed/tokyo09/img/photos/1/3.jpg" alt="3" /><img src="/themed/tokyo09/img/photos/1/4.jpg" alt="4" /><img src="/themed/tokyo09/img/photos/1/5.jpg" alt="5" /><img src="/themed/tokyo09/img/photos/1/6.jpg" alt="6" /><img src="/themed/tokyo09/img/photos/1/7.jpg" alt="7" /><img src="/themed/tokyo09/img/photos/1/8.jpg" alt="8" /><img src="/themed/tokyo09/img/photos/1/9.jpg" alt="9" /><img src="/themed/tokyo09/img/photos/1/10.jpg" alt="10" />	</div>
+
+	<div id="newsfeed">
+		<h3>news</h3>
+
+		
+			</div>
+	
+	<div class="content" id="talks">
+		<h1 class="title">
+	Conference<span class="highlight">Schedule</span>
+</h1>
+<a name="top"></a>
+
+
+<div class="content" id="content">
+
+<p>CakePHPユーザが集まる一日限りの"祭り"に参加しましょう！コア開発者による技術セッションや、パワーユーザによる開発事例など盛りだくさんです。会場内でランチ、パーティの用意がありますので、ぜひこの機会にユーザー同士で楽しい時間を過ごしましょう！ライトニングトーク大会も開催致します！</p>
+
+<p style="text-align: center; font-size: 140%">当日券を受け付けています。 詳細については info [at] matsuri.cakephp.jp までご連絡ください！</p>
+
+
+</div>
+
+<div class="schedule" id="schedule">
+<h3>Saturday, October 31th</h3>
+<table>
+  <thead><tr style="background-color: ">
+    <th>Starts</th>
+    <th>Ends</th>
+    <th>Talk</th>
+    <th>Speaker</th>
+  </tr></thead>
+  <tbody>
+    <tr class="even">
+      <td class="start">9:45</td>
+      <td class="end">10:30</td>
+      <td><a href="#" class="talk">基調講演 CakePHP道 </a></td>
+      <td class="speaker">Yusuke Ando</td>
+    </tr>
+    <tr class="body">
+      <td colspan="4">
+        <p>誰でも簡単に始められるCakePHPを極める為の"王道"とは何か？をyandodの経験に基づく"CakePHP道"として解説します。
+        CakePHP道に基づいた設計の仕方、拡張ノウハウ、その他のフレームワークとの比較、情報の収集方法などについて実際に公開されているオープンソースプロダクトなどを題材に語りつくします！
+        </p>
+      </td>
+    </tr>
+    <tr class="even">
+      <td class="start">10:30</td>
+      <td class="end">11:30</td>
+      <td><a href="#" class="talk">事例紹介</a></td>
+      <td class="speaker"></td>
+    </tr>
+    <tr class="body">
+      <td colspan="4">
+        <p>CakePHPを利用したシステム構築事例をご紹介します。</p>
+        <p>皆が知っているあのサイトが登場するかも！？</p>
+        <ul>
+          <li>CakePHPでつくる地域SNS ～全国40ヶ所以上で展開する地域SNSのシステム～<br /><a href="http://cakephp.blog16.jp/">あつ</a></li>
+          <li>スズキ自販サイトでの CakePHP 活用事例<br /><a href="http://www.syuhari.jp/blog/">syuhari</a></li>
+          <li>nanapiをつくるレシピ（仮）<br /><a href="http://d.hatena.ne.jp/wadap">和田修一</a></li>
+        </ul>
+      </td>
+    </tr>
+    <tr class="even">
+      <td class="start">11:30</td>
+      <td class="end">1:00</td>
+      <td><a href="#" class="talk">ランチタイム</a></td>
+      <td class="speaker"></td>
+    </tr>
+    <tr class="body">
+      <td colspan="4">
+        <p>カンファレンス会場での昼食となります。またとないBaker同士の交流の機会なので楽しいランチを！</p>
+      </td>
+    </tr>
+    <tr class="even">
+      <td class="start">1:00</td>
+      <td class="end">2:00</td>
+      <td><a href="#" class="talk">CakePHP: The framework strikes back ～フレームワークの逆襲～</a></td>
+      <td class="speaker">Graham Weldon<br/>(英/日逐次通訳)</td>
+    </tr>
+    <tr class="body">
+      <td colspan="4">
+        <p>
+        今後リリースされるCakePHP1.3での変更点や移行の方法、CakePHP2.0やさらにそのさらに未来の開発状況やコードについてお話します。
+	</p>
+      </td>
+    </tr>
+    <tr class="even">
+      <td class="start">2:00</td>
+      <td class="end">2:30</td>
+      <td><a href="#" class="talk">事例紹介2</a></td>
+      <td class="speaker"></td>
+    </tr>
+    <tr class="body">
+      <td colspan="4">
+        <p>CakePHPを利用したシステム構築事例をご紹介します。</p>
+        <ul>
+          <li>CakePHPで作る物件紹介ポータルサイト、他<br /><a href="http://www.mitsue.co.jp">bennylee</a></li>
+          <li>研究分野でのCakePHPの活用事例とその周辺の話<br /><a href="http://www.acl-inc.co.jp">飯塚康至</a></li>
+        </ul>
+      </td>
+    </tr>
+    <tr class="even">
+      <td class="start">2:30</td>
+      <td class="end">3:00</td>
+      <td><a href="#" class="talk">プラグイン活用法</a></td>
+      <td class="speaker">slywalker</td>
+    </tr>
+    <tr class="body">
+      <td colspan="4">
+        <p>CakePHPを使いこなす為の重要テクニックとして注目が集まっているプラグイン。このセッションではプラグインの活用法を実際の体験にそってお話します。</p>
+      </td>
+    </tr>
+    <tr class="even">
+      <td class="start">3:00</td>
+      <td class="end">4:00</td>
+      <td><a href="#" class="talk">Key-Value Stores & Non-Relational Databases</a></td>
+      <td class="speaker">Joel Perras<br/>(英/日逐次通訳)</td>
+    </tr>
+    <tr class="body">
+      <td colspan="4">
+        <p>CakePHPコアデベロッパの一員、Joel氏が日本でも話題のKVSや、今後注目が集まる非リレーショナル
+     データベースの活用方法についてお話します。</p>
+      </td>
+    </tr>
+    <tr class="even">
+      <td class="start">4:00</td>
+      <td class="end">5:00</td>
+      <td><a href="#" class="talk">パネルディスカッション</a></td>
+      <td class="speaker"></td>
+    </tr>
+    <tr class="body">
+      <td colspan="4">
+        <p>日本各地のCakePHPユーザが大集合。地方でのCakePHPの実状やコミュニティに関するトークを繰り広げます。</p>
+        <ul>
+          <li><a href="http://twitter.com/makies">makies(海グラマー)</a>（北海道）</li>
+          <li><a href="http://d.hatena.ne.jp/cakephper">市川</a>（東京）</li>
+          <li><a href="http://cakephp.blog16.jp/">あつ</a>（東海）</li>
+          <li><a href="http://www.1x1.jp/blog/">shin1x1</a>（関西）</li>
+          <li><a href="http://blog.livedoor.jp/k1LoW/">小山(k1LoW)</a>（九州）</li>
+          <li><a href="http://twitter.com/sizuhiko">きしだ</a>（進行）</li>
+        </ul>
+      </td>
+    </tr>
+    <tr class="even">
+      <td class="start">5:00</td>
+      <td class="end">6:00</td>
+      <td><a href="#" class="talk">Lightning Talks</a></td>
+      <td class="speaker"></td>
+    </tr>
+    <tr class="body">
+      <td colspan="4">
+        <p>CakePHPに纏わるテーマでライトニングトークを行います。</p>
+        <p>CakePHPの技術Tipsや事例、活用自慢などなど。</p>
+        <ul>
+          <li>ウチのCakePHP<br /><a href="http://www.1x1.jp/blog/">新原雅司（１×１株式会社）</a></li>
+          <li>model_infoプラグインの紹介<br /><a href="http://blog.livedoor.jp/k1LoW/">小山健一郎(id:k1LoW)</a></li>
+          <li>基本のお菓子―とりあえずこのプラグインさえ使えれば<br /><a href="http://www.twinspark.co.jp/">高橋征義（株式会社ツインスパーク）</a></li>
+          <li>CakePHPで作るiPhoneアプリ<br /><a href="http://www.syuhari.jp/blog/">松浦　晃洋</a></li>
+          <li>Hituji×Cake Story<br /><a href="http://www.hituji-inc.co.jp/">北川大祐(株式会社ひつじインキュベーション・スクエア)</a></li>
+          <li>CakePHP is good<br /><a href="http://www.ban-systems.com">こんのようすけ（BANSYSTEMS）</a></li>
+          <li>Learning CakePHP<br />藤原敬弘</li>
+          <li>Remember Me<br />パーハック キース</li>
+          <li>CakePHP弊社実例<br />渡辺翔太</li>
+          <li>bind,unbindはもう古い！Containable Behaviorでrecursive=3だってこわくない！<br /><a href="http://www.akiyan.com/">秋田真宏（akiyan.com）</a></li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<a href="#top">▲Page Top</a>
+</div>
+	</div>
+	<div class="sponsors">
+		<p class="by">
+	<div class="border border-left">&nbsp;</div>
+	<span class="by">Proudly Sponsored By</span>
+	<div class="border border-right">&nbsp;</div>
+</p>
+<div class="sponsor-images">
+
+
+	<a href="http://cakedc.com"><img src="/themed/tokyo09/img/sponsors/cake_development_corporation.png" width="200" height="69" class="cakedc" alt="" /></a>
+        <br />
+    <div class="border-left">
+	<a href="http://www.e-2.co.jp/index.html"><img src="/themed/tokyo09/img/sponsors/e2_200px.png" width="200" height="99" alt="" /></a>	<br />
+	<a href="http://www.e-2.co.jp/index.html">株式会社 E2</a>	<br /><br />
+	<a href="http://fusic.co.jp/"><img src="/themed/tokyo09/img/sponsors/fusic_logo.png" width="200" height="100" alt="" /></a>	<br />
+	<a href="http://fusic.co.jp/">株式会社 Fusic</a>	<br /><br />
+	<a href="http://www.affilorama.com/"><img src="/themed/tokyo09/img/sponsors/affilorama_200px.jpg" width="200" height="40" alt="" /></a>	<br />
+	<a href="http://www.affilorama.com/">Affiliate Marketing</a>        <br /><br />
+	<a href="http://www.contents-one.co.jp/"><img src="/themed/tokyo09/img/sponsors/contentsone_200px.jpg" alt="" /></a>	<br />
+	<a href="http://www.contents-one.co.jp/">株式会社コンテンツワン</a>		<br /><br />
+    </div>
+
+    <div class="border-right">
+	<a href="http://www.1x1.jp/"><img src="/themed/tokyo09/img/sponsors/1x1_200px.png" width="200" height="95" alt="" /></a>	<br />
+	<a href="http://www.1x1.jp/">１ｘ１株式会社</a>	<br /><br />
+	<a href="http://www.hituji.jp/"><img src="/themed/tokyo09/img/sponsors/hituji-logo.gif" width="200" height="40" alt="" /></a>	<br />
+	<a href="http://www.hituji-inc.co.jp/">ひつじインキュベーション・スクウェア</a>
+
+        <br /><br />
+	<a href="http://www.mitsue.co.jp/"><img src="/themed/tokyo09/img/sponsors/mitsue_links.gif" alt="" /></a>	<br />
+	<a href="http://www.mitsue.co.jp/">株式会社 ミツエーリンクス</a>        <br /><br />
+	<a href="http://www.esm.co.jp/"><img src="/themed/tokyo09/img/sponsors/eiwa-logo.gif" alt="" /></a>	<br />
+	<a href="http://www.esm.co.jp/">株式会社 永和システムマネジメント</a>		<br /><br />
+   </div>
+
+	</p>
+</div>
+	</div>
+	<div class="footer">
+				
+		<a href="/pages/badges" class="important">Badges and Banners: Help Promote CakeMatsuri</a>		<br />
+		&copy; 2009, <a href="http://cakephp.jp">CakePHP users in japan</a>		- Powered by <a href="http://cakephp.org">CakePHP</a> 1.2.4.8284	</div>
+</div>
+<script type="text/javascript">
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+	try {
+		var pageTracker = _gat._getTracker("UA-1296428-3");
+		pageTracker._trackPageview();
+	} catch(err) {
+	}
+</script>
+</body>
+</html>

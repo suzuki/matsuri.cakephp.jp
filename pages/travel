@@ -1,0 +1,381 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	<title>CakeMatsuri: October 30-31, 2009 - Travel</title>
+	<link rel="stylesheet" type="text/css" href="/themed/tokyo09/css/styles.css" /><link href="favicon.ico" type="image/x-icon" rel="icon" /><link href="favicon.ico" type="image/x-icon" rel="shortcut icon" /><link href="http://matsuri.cakephp.jp/posts.rss" type="application/rss+xml" rel="alternate" title="CakeMatsuri: 最新情報" />
+	<script type="text/javascript" src="/js/jquery-1.3.1.js"></script>
+	<script type="text/javascript" src="/themed/tokyo09/js/application.js"></script>
+<script type="text/javascript" src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAAONnE1TOPmo2CrCuJDIukQBStCpeZ7OlgPDCjmCoOC1Ma6nFIyxTWj2kscevSX4hFKoDcu88HAIIqDg"></script>	<script type="text/javascript">
+		$(function() {
+			setInterval(
+				function() {
+					active = $('#slideshow img.active');
+					active = active.length ? active : $('#slideshow img:last');
+					next = active.next().length ? active.next() : $('#slideshow img:first');
+					active.addClass('previous');
+					anim = [{ opacity: 0.0 }, { opacity: 1.0 }];
+
+					next.css(anim[0]).addClass('active').animate(anim[1], 1000, function() {
+						active.removeClass('active previous');
+					});
+				},
+				4000
+			);
+		});
+	</script>
+</head>
+<body>
+<div class="container">
+	<div id="sites-nav">
+	<ul class="navigation main">
+		<li><a href="http://cakephp.jp">CakePHP</a></li>
+		<li><a href="http://bakery.cakephp.org">Bakery</a></li>
+		<li><a href="http://api.cakephp.org">API</a></li>
+		<li><a href="http://manual.cakephp.org">Manual</a></li>
+		<li><a href="http://live.cakephp.org">The Show</a></li>
+		<li><a href="http://trac.cakephp.org">Development</a></li>
+	</ul>
+
+	<ul class="navigation sub">
+							<li><a href="/lang/change/lang:eng">English</a></li>
+									<li><a href="/lang/change/lang:jpn">日本語</a></li>
+				 		<li><a href="http://cakephp.org">About CakePHP</a></li>
+	</ul>
+	<div class="clearing"></div>
+</div>
+	<ul class="navigation-menu">
+		
+	<li><a href="/" id="Navホーム">ホーム</a></li>
+	<li><a href="/registrations/add" id="Nav参加登録">参加登録</a></li>
+	<li><a href="/pages/talks" id="Navカンファレンス">カンファレンス</a></li>
+	<li><a href="/pages/workshop" id="Navワークショップ">ワークショップ</a></li>
+	<li><a href="/pages/travel" id="Nav会場案内">会場案内</a></li>
+	<li><a href="/pages/aboutus" id="Nav青年団">青年団</a></li>	</ul>
+
+	<div id="slideshow">
+		<img src="/themed/tokyo09/img/photos/1/1.jpg" alt="1" /><img src="/themed/tokyo09/img/photos/1/2.jpg" alt="2" /><img src="/themed/tokyo09/img/photos/1/3.jpg" alt="3" /><img src="/themed/tokyo09/img/photos/1/4.jpg" alt="4" /><img src="/themed/tokyo09/img/photos/1/5.jpg" alt="5" /><img src="/themed/tokyo09/img/photos/1/6.jpg" alt="6" /><img src="/themed/tokyo09/img/photos/1/7.jpg" alt="7" /><img src="/themed/tokyo09/img/photos/1/8.jpg" alt="8" /><img src="/themed/tokyo09/img/photos/1/9.jpg" alt="9" /><img src="/themed/tokyo09/img/photos/1/10.jpg" alt="10" />	</div>
+
+	<div id="newsfeed">
+		<h3>news</h3>
+
+		
+			</div>
+	
+	<div class="content" id="travel">
+		<script type="text/javascript">
+	var map = null;
+
+	var markers = [
+		{
+			type: "airport",
+			title: "Narita Airport (NRT)",
+			description: "",
+			lat: "35.773552",
+			lng: "140.388244"
+		}, {
+			type: "hotel",
+			title: "Shibuya Tokyu Inn",
+			description: "Single 15,500yen, includes LAN",
+			lat: "35.660203",
+			lng: "139.701993"
+		}, {
+			type: "hotel",
+			title: "Shibuya Granbell Hotel",
+			description: "Single 9,100yen, includes BreakFast",
+			lat: "35.656245",
+			lng: "139.701637"
+		}, {
+			type: "hotel",
+			title: "SAKURA FLEUR AOYAMA",
+			description: "Single 8,800yen",
+			lat: "35.659575",
+			lng: "139.705748"
+		}, {
+			type: "hotel",
+			title: "SHIBUYA CRESTON HOTEL",
+			description: "Single 15,6922yen",
+			lat: "35.663266",
+			lng: "139.694699"
+		}, {
+			type: "venue",
+			title: "SHIDAX Hall / CakeMatsuri Venue",
+			description: 'Location of CakeMatsuri conference and workshop<br />Join us for great presentations, great food, great discussions and free wifi!',
+			lat: "35.663128",
+			lng: "139.700653"
+			
+		}
+	];
+
+	$(function() {
+		$('#HotelList td.name').bind('click', function(e) {
+			$('#HotelList td.name').parents("tr").next().hide();
+			$(this).parents('tr').next().show();
+		});
+
+		$('a.map-link').click(function() {
+			if ($(this).parents('tr').length > 0) {
+				placeName = $(this).parents('tr').prev().find('td.name').html();
+			} else {
+				placeName = $(this).html()
+			}
+
+			for (n in markers) {
+				if (markers[n].title != placeName) {
+					continue;
+				}
+
+				window.coords = new GLatLng(markers[n].lat, markers[n].lng);
+				window.currentMarker = markers[n];
+				map.panTo(window.coords);
+
+				setTimeout(
+					function() {
+						map.setCenter(window.coords, 14);
+						window.currentMarker.object.openInfoWindowHtml(
+							'<strong>' + window.currentMarker.title + '</strong>' +
+							'<p>' + window.currentMarker.description + '</p>'
+						);
+					},
+					700
+				);
+				break;
+			}
+		});
+
+		var icons = {
+			airport: new GIcon(
+				G_DEFAULT_ICON,
+				"/themed/tokyo09/img/map/airport-marker.png"
+			),
+			hotel: new GIcon(
+				G_DEFAULT_ICON,
+				"/themed/tokyo09/img/map/hotel-marker.png"
+			),
+			venue: new GIcon(
+				G_DEFAULT_ICON,
+				"/themed/tokyo09/img/map/venue-marker.png"
+			)
+		};
+		icons.airport.imageSize = new GSize(50, 50);
+		icons.hotel.imageSize = new GSize(50, 50);
+		icons.venue.imageSize = new GSize(50, 50);
+
+		map = new GMap2(document.getElementById("TravelMap"));
+
+		map.setCenter(new GLatLng(35.66, 139.70), 14);
+		map.addControl(new GSmallMapControl());
+		map.enableContinuousZoom();
+
+		GEvent.addListener(map, "click", function(overlay, latlng) {
+			if (!overlay) {
+				return;
+			}
+			for (n in markers) {
+				if (markers[n].object != overlay) {
+					continue;
+				}
+				m = markers[n];
+				info = '<strong>' + m.title + '</strong><p>' + m.description + '</p>';
+				overlay.openInfoWindowHtml(info);
+				$('#HotelList td.name').parents("tr").next().hide();
+				$('#HotelList td.name:contains("' + m.title + '")').parents('tr').next().show();
+			}
+		});
+
+		GEvent.addListener(map, "tilesloaded", function() {
+			$('#MapLoader').slideUp();
+
+			$.each(markers, function(i, item) {
+				marker = new GMarker(new GLatLng(item.lat, item.lng), { icon: icons[item.type] });
+				markers[i].object = marker;
+				map.addOverlay(marker);
+			});
+		});
+	});
+</script>
+
+<h1 class="title">
+	Location&amp;<span class="highlight">Travel</span>
+</h1>
+
+<div id="MapLoader">
+	<img src="/themed/tokyo09/img/spinner.gif" alt="Loading Map" />	<span>Loading map...</span>
+</div>
+
+<a name="map"></a>
+<div id="TravelMap"></div>
+
+<div class="content-wrapper">
+<h3>会場案内</h3>
+<p>
+<img src="/themed/tokyo09/img/map/shidax.jpg" alt="" /><br/>
+シダックスホールはJR渋谷駅からも近く大変便利な立地です。ハチ公口からQ-Front、タワーレコードの方向に向かって徒歩8分です。<br/>
+<a href="http://www.shidax.co.jp/ssv/hall/index.html">shidax.co.jp</a><br/>
+<a href="http://www.web-across.com/todays/d6eo3n000000k4cm.html">View ovewview</a></p>
+
+<h3>Hotels</h3>
+<p>
+会場から徒歩で行けるエリアには様々なホテルがあります。ここではその一部をご紹介します。</p>
+
+<table id="HotelList">
+	<thead>
+		<tr>
+			<th class="name">Hotel Name</th>
+			<th>会場まで</th>
+			<th>Price/Night</th>
+			<th>Breakfast?</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="name">シダックスホール(会場)</td>
+			<td class="distance"> - </td>
+			<td class="price"> - </td>
+			<td> - </td>
+		</tr>
+		<tr class="info"><td colspan="4">
+			<div class="info-col left">
+				<div>1-12-13 Shibuyaku Jinnan</div>
+				<div>Shidax vilage 2nd floor</div>
+				<div>
+					<img src="/themed/tokyo09/img/map/push-pin.png" alt="Show in map" />					<a href="#map" class="map-link">Show in map</a>				</div>
+			</div>
+			<div class="info-col right">
+				<div>Tel: +81 03-5784-8830</div>
+				<div><a href="http://www.shidax.co.jp/ssv/hall/index.html" target="_blank">shidax hall</a></div>
+			</div>
+		</td></tr>
+		<tr class="altrow">
+			<td class="name">渋谷東急イン</td>
+			<td class="distance">0.6 km / 6 min</td>
+			<td class="price">15,500yen - </td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr class="info"><td colspan="4">
+			<div class="info-col left">
+				<div>1-24-10, Shibuya, Shibuya-ku</div>
+				<div>Tokyo 150-0002</div>
+				<div>
+					<img src="/themed/tokyo09/img/map/push-pin.png" alt="Show in map" />					<a href="#map" class="map-link">Show in map</a>				</div>
+			</div>
+			<div class="info-col right">
+				<div><a href="http://www.tokyuhotelsjapan.com/en/TI/TI_SHIBU/index.html" target="_blank">Shibuya Tokyu Inn</a><br/><a href="http://web.travel.rakuten.co.jp/portal/my/info_page_e.Eng?f_no=509">Book Now</a></div>
+			</div>
+		</td></tr>
+		<tr>
+			<td class="name">渋谷グランベルホテル</td>
+			<td class="distance">0.8 km / 13 min</td>
+			<td class="price">9,100 yen- 13,000 yen</td>
+			<td><img src="/themed/tokyo09/img/checkmark.png" alt="" /></td>
+		</tr>
+		<tr class="info"><td colspan="4">
+			<div class="info-col left">
+				<div>15-17, Sakuragaoka, Shibuya ku</div>
+				<div>Tokyo 150-0031</div>
+				<div>
+					<img src="/themed/tokyo09/img/map/push-pin.png" alt="Show in map" />					<a href="#map" class="map-link">Show in map</a>				</div>
+			</div>
+			<div class="info-col right">
+				<div><a href="http://www.granbellhotel.jp/index_e.html" target="_blank">Shibuya Granbell Hotel</a><br/><a href="http://web.travel.rakuten.co.jp/portal/my/info_page_e.Eng?f_no=52992">Book Now</a></div>
+			</div>
+		</td></tr>
+		<tr class="altrow">
+			<td class="name">サクラフレール青山</td>
+			<td class="distance">1.1 km / 10 min</td>
+			<td class="price">8,800yen - 9,900yen</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr class="info"><td colspan="4">
+			<div class="info-col left">
+				<div>2-14-15 SHIBUYA, SHIBUYA-KU</div>
+				<div>TOKYO 150-0002</div>
+				<div>
+					<img src="/themed/tokyo09/img/map/push-pin.png" alt="Show in map" />					<a href="#map" class="map-link">Show in map</a>				</div>
+			</div>
+			<div class="info-col right">
+				<div><a href="http://www.sakura-hotels.com/" target="_blank">SAKURA FLEUR AOYAMA</a><br/><a href="http://web.travel.rakuten.co.jp/portal/my/info_page_e.Eng?f_no=29764">Book Now</a></div>
+			</div>
+		</td></tr>
+		<tr>
+			<td class="name">渋谷クレストンホテル</td>
+			<td class="distance">0.9 km / 9 min</td>
+			<td class="price">15,692 yen</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr class="info"><td colspan="4">
+			<div class="info-col left">
+				<div>10-8, KAMIYA-CHO, SHIBUYA</div>
+				<div>TOKYO 150-0047</div>
+				<div>
+					<img src="/themed/tokyo09/img/map/push-pin.png" alt="Show in map" />					<a href="#map" class="map-link">Show in map</a>				</div>
+			</div>
+			<div class="info-col right">
+				<div><a href="http://www.crestonhotel.co.jp/shibuya/" target="_blank">Shibuya Creston Hotel</a><br/><a href="http://web.travel.rakuten.co.jp/portal/my/info_page_e.Eng?f_no=19745">Book Now</a></div>
+			</div>
+		</td></tr>
+	</tbody>
+</table>
+
+<h3>成田空港から</h3>
+<p>
+成田空港から渋谷へは高速バス、電車の利用をお勧めします。<br/>
+<br/>
+<a href="http://www.limousinebus.co.jp/en/guide/map/narita_airport.html">Airport Limousine (Depature from Naritra Airport)</a><br/>
+<a href="http://www.limousinebus.co.jp/en/guide/map/shibuyast.html">Airport Limousine (Depature from Shibuya)</a></p>
+
+</div>	</div>
+	<div class="sponsors">
+		<p class="by">
+	<div class="border border-left">&nbsp;</div>
+	<span class="by">Proudly Sponsored By</span>
+	<div class="border border-right">&nbsp;</div>
+</p>
+<div class="sponsor-images">
+
+
+	<a href="http://cakedc.com"><img src="/themed/tokyo09/img/sponsors/cake_development_corporation.png" width="200" height="69" class="cakedc" alt="" /></a>
+        <br />
+    <div class="border-left">
+	<a href="http://www.e-2.co.jp/index.html"><img src="/themed/tokyo09/img/sponsors/e2_200px.png" width="200" height="99" alt="" /></a>	<br />
+	<a href="http://www.e-2.co.jp/index.html">株式会社 E2</a>	<br /><br />
+	<a href="http://fusic.co.jp/"><img src="/themed/tokyo09/img/sponsors/fusic_logo.png" width="200" height="100" alt="" /></a>	<br />
+	<a href="http://fusic.co.jp/">株式会社 Fusic</a>	<br /><br />
+	<a href="http://www.affilorama.com/"><img src="/themed/tokyo09/img/sponsors/affilorama_200px.jpg" width="200" height="40" alt="" /></a>	<br />
+	<a href="http://www.affilorama.com/">Affiliate Marketing</a>        <br /><br />
+	<a href="http://www.contents-one.co.jp/"><img src="/themed/tokyo09/img/sponsors/contentsone_200px.jpg" alt="" /></a>	<br />
+	<a href="http://www.contents-one.co.jp/">株式会社コンテンツワン</a>		<br /><br />
+    </div>
+
+    <div class="border-right">
+	<a href="http://www.1x1.jp/"><img src="/themed/tokyo09/img/sponsors/1x1_200px.png" width="200" height="95" alt="" /></a>	<br />
+	<a href="http://www.1x1.jp/">１ｘ１株式会社</a>	<br /><br />
+	<a href="http://www.hituji.jp/"><img src="/themed/tokyo09/img/sponsors/hituji-logo.gif" width="200" height="40" alt="" /></a>	<br />
+	<a href="http://www.hituji-inc.co.jp/">ひつじインキュベーション・スクウェア</a>
+
+        <br /><br />
+	<a href="http://www.mitsue.co.jp/"><img src="/themed/tokyo09/img/sponsors/mitsue_links.gif" alt="" /></a>	<br />
+	<a href="http://www.mitsue.co.jp/">株式会社 ミツエーリンクス</a>        <br /><br />
+	<a href="http://www.esm.co.jp/"><img src="/themed/tokyo09/img/sponsors/eiwa-logo.gif" alt="" /></a>	<br />
+	<a href="http://www.esm.co.jp/">株式会社 永和システムマネジメント</a>		<br /><br />
+   </div>
+
+	</p>
+</div>
+	</div>
+	<div class="footer">
+				
+		<a href="/pages/badges" class="important">Badges and Banners: Help Promote CakeMatsuri</a>		<br />
+		&copy; 2009, <a href="http://cakephp.jp">CakePHP users in japan</a>		- Powered by <a href="http://cakephp.org">CakePHP</a> 1.2.4.8284	</div>
+</div>
+<script type="text/javascript">
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+	try {
+		var pageTracker = _gat._getTracker("UA-1296428-3");
+		pageTracker._trackPageview();
+	} catch(err) {
+	}
+</script>
+</body>
+</html>

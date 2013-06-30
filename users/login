@@ -1,0 +1,399 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	<title>CakeMatsuri: October 30-31, 2009 - ログイン</title>
+	<link rel="stylesheet" type="text/css" href="/themed/tokyo09/css/styles.css" /><link href="favicon.ico" type="image/x-icon" rel="icon" /><link href="favicon.ico" type="image/x-icon" rel="shortcut icon" /><link href="http://matsuri.cakephp.jp/posts.rss" type="application/rss+xml" rel="alternate" title="CakeMatsuri: 最新情報" />
+	<script type="text/javascript" src="/js/jquery-1.3.1.js"></script>
+	<script type="text/javascript" src="/themed/tokyo09/js/application.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			setInterval(
+				function() {
+					active = $('#slideshow img.active');
+					active = active.length ? active : $('#slideshow img:last');
+					next = active.next().length ? active.next() : $('#slideshow img:first');
+					active.addClass('previous');
+					anim = [{ opacity: 0.0 }, { opacity: 1.0 }];
+
+					next.css(anim[0]).addClass('active').animate(anim[1], 1000, function() {
+						active.removeClass('active previous');
+					});
+				},
+				4000
+			);
+		});
+	</script>
+</head>
+<body>
+<div class="container">
+	<div id="sites-nav">
+	<ul class="navigation main">
+		<li><a href="http://cakephp.jp">CakePHP</a></li>
+		<li><a href="http://bakery.cakephp.org">Bakery</a></li>
+		<li><a href="http://api.cakephp.org">API</a></li>
+		<li><a href="http://manual.cakephp.org">Manual</a></li>
+		<li><a href="http://live.cakephp.org">The Show</a></li>
+		<li><a href="http://trac.cakephp.org">Development</a></li>
+	</ul>
+
+	<ul class="navigation sub">
+							<li><a href="/lang/change/lang:eng">English</a></li>
+									<li><a href="/lang/change/lang:jpn">日本語</a></li>
+				 		<li><a href="http://cakephp.org">About CakePHP</a></li>
+	</ul>
+	<div class="clearing"></div>
+</div>
+	<ul class="navigation-menu">
+		
+	<li><a href="/" id="Navホーム">ホーム</a></li>
+	<li><a href="/registrations/add" id="Nav参加登録">参加登録</a></li>
+	<li><a href="/pages/talks" id="Navカンファレンス">カンファレンス</a></li>
+	<li><a href="/pages/workshop" id="Navワークショップ">ワークショップ</a></li>
+	<li><a href="/pages/travel" id="Nav会場案内">会場案内</a></li>
+	<li><a href="/pages/aboutus" id="Nav青年団">青年団</a></li>	</ul>
+
+	<div id="slideshow">
+		<img src="/themed/tokyo09/img/photos/1/1.jpg" alt="1" /><img src="/themed/tokyo09/img/photos/1/2.jpg" alt="2" /><img src="/themed/tokyo09/img/photos/1/3.jpg" alt="3" /><img src="/themed/tokyo09/img/photos/1/4.jpg" alt="4" /><img src="/themed/tokyo09/img/photos/1/5.jpg" alt="5" /><img src="/themed/tokyo09/img/photos/1/6.jpg" alt="6" /><img src="/themed/tokyo09/img/photos/1/7.jpg" alt="7" /><img src="/themed/tokyo09/img/photos/1/8.jpg" alt="8" /><img src="/themed/tokyo09/img/photos/1/9.jpg" alt="9" /><img src="/themed/tokyo09/img/photos/1/10.jpg" alt="10" />	</div>
+
+	<div id="newsfeed">
+		<h3>news</h3>
+
+		
+			</div>
+	
+	<div class="content" id="content">
+		<script type="text/javascript">
+	$(document).ready(function() {
+		$('#ContentRegister').hide();
+		$('ul.form-tabs li a:contains(Login)').parent().addClass('selected');
+
+		$('ul.form-tabs li a').bind('click', function(e) {
+			$('div.tab-content > div').hide();
+			$('#Content' + $(this).text()).show();
+			$('ul.form-tabs li').removeClass('selected');
+			$(this).parent().addClass('selected');
+			return false;
+		});
+	});
+</script>
+<div id="UserWindow">
+	<ul class="form-tabs">
+		<li><a href="/users/add">Register</a></li>
+		<li><a href="/users/login">Login</a></li>
+	</ul>
+	<div class="tab-content">
+		<div id="ContentLogin"><div class="users form">
+<form id="UserLoginForm" method="post" action="/users/login"><fieldset style="display:none;"><input type="hidden" name="_method" value="POST" /><input type="hidden" name="data[_Token][key]" value="fd6d78b2c1afc02034234c421dfc1aada81ce92e" id="Token98117439" /></fieldset><div class="input text required"><label for="UserEmail">Email</label><input name="data[User][email]" type="text" maxlength="255" value="" id="UserEmail" /></div><div class="input password required"><label for="UserPassword">Password</label><input type="password" name="data[User][password]" value="" id="UserPassword" /></div><div class="submit"><input type="submit" value="ログイン" /></div><fieldset style="display:none;"><input type="hidden" name="data[_Token][fields]" value="5f6e7b227f476c953b45c77d5c998b8585fdd5f3%3An%3A0%3A%7B%7D" id="TokenFields1624506245" /></fieldset></form><p>パスワードを忘れた場合は、 <a href="/users/forgot">パスワードのリセットをしてください。</a>.</p>
+
+</div></div>
+		<div id="ContentRegister"><form controller="users" id="UserAddForm" method="post" action="/users/add"><fieldset style="display:none;"><input type="hidden" name="_method" value="POST" /><input type="hidden" name="data[_Token][key]" value="fd6d78b2c1afc02034234c421dfc1aada81ce92e" id="Token2075935442" /></fieldset>	<fieldset>
+		<div class="input select"><label for="RegistrationType">レベルと言語</label><select name="data[Registration][type]" id="RegistrationType">
+<option value="J">Cake初心者/日本語</option>
+<option value="K">Cake中級者/日本語</option>
+<option value="E">Cake初心者/英語</option>
+<option value="F">Cake中級者/英語</option>
+</select></div><div class="input text required"><label for="UserEmail">Email</label><input name="data[User][email]" type="text" maxlength="255" value="" id="UserEmail" /></div><div class="input password required"><label for="UserPassword">Password</label><input type="password" name="data[User][password]" value="" id="UserPassword" /></div><div class="field required"><label for="UserPasswordConfirm">Retype Password</label><input type="password" name="data[User][password_confirm]" value="" id="UserPasswordConfirm" /></div><hr /><div class="input text"><label for="UserName">お名前</label><input name="data[User][name]" type="text" maxlength="255" value="" id="UserName" /></div><div class="input text"><label for="UserAddress">地区、番地</label><input name="data[User][address]" type="text" maxlength="255" value="" id="UserAddress" /></div><div class="input text"><label for="UserCity">市町村</label><input name="data[User][city]" type="text" maxlength="255" value="" id="UserCity" /></div><div class="input text"><label for="UserState">都道府県</label><input name="data[User][state]" type="text" maxlength="255" value="" id="UserState" /></div><div class="input text"><label for="UserZip">郵便番号</label><input name="data[User][zip]" type="text" maxlength="100" value="" id="UserZip" /></div><div class="input select"><label for="UserCountry">国</label><select name="data[User][country]" id="UserCountry">
+<option value="AF">Afghanistan</option>
+<option value="AX">Åland Islands</option>
+<option value="AL">Albania</option>
+<option value="DZ">Algeria</option>
+<option value="AS">American Samoa</option>
+<option value="AD">Andorra</option>
+<option value="AO">Angola</option>
+<option value="AI">Anguilla</option>
+<option value="AQ">Antarctica</option>
+<option value="AG">Antigua and Barbuda</option>
+<option value="AR">Argentina</option>
+<option value="AM">Armenia</option>
+<option value="AW">Aruba</option>
+<option value="AU">Australia</option>
+<option value="AT">Austria</option>
+<option value="AZ">Azerbaijan</option>
+<option value="BS">Bahamas</option>
+<option value="BH">Bahrain</option>
+<option value="BD">Bangladesh</option>
+<option value="BB">Barbados</option>
+<option value="BY">Belarus</option>
+<option value="BE">Belgium</option>
+<option value="BZ">Belize</option>
+<option value="BJ">Benin</option>
+<option value="BM">Bermuda</option>
+<option value="BT">Bhutan</option>
+<option value="BO">Bolivia</option>
+<option value="BA">Bosnia and Herzegovina</option>
+<option value="BW">Botswana</option>
+<option value="BV">Bouvet Island</option>
+<option value="BR">Brazil</option>
+<option value="IO">British Indian Ocean Territory</option>
+<option value="BN">Brunei Darussalam</option>
+<option value="BG">Bulgaria</option>
+<option value="BF">Burkina Faso</option>
+<option value="BI">Burundi</option>
+<option value="KH">Cambodia</option>
+<option value="CM">Cameroon</option>
+<option value="CA">Canada</option>
+<option value="CV">Cape Verde</option>
+<option value="KY">Cayman Islands</option>
+<option value="CF">Central African Republic</option>
+<option value="TD">Chad</option>
+<option value="CL">Chile</option>
+<option value="CN">China</option>
+<option value="CX">Christmas Island</option>
+<option value="CC">Cocos (Keeling) Islands</option>
+<option value="CO">Colombia</option>
+<option value="KM">Comoros</option>
+<option value="CG">Congo</option>
+<option value="CD">Congo, the Democratic Republic of the</option>
+<option value="CK">Cook Islands</option>
+<option value="CR">Costa Rica</option>
+<option value="CI">Côte d&#039;Ivoire</option>
+<option value="HR">Croatia</option>
+<option value="CU">Cuba</option>
+<option value="CY">Cyprus</option>
+<option value="CZ">Czech Republic</option>
+<option value="DK">Denmark</option>
+<option value="DJ">Djibouti</option>
+<option value="DM">Dominica</option>
+<option value="DO">Dominican Republic</option>
+<option value="EC">Ecuador</option>
+<option value="EG">Egypt</option>
+<option value="SV">El Salvador</option>
+<option value="GQ">Equatorial Guinea</option>
+<option value="ER">Eritrea</option>
+<option value="EE">Estonia</option>
+<option value="ET">Ethiopia</option>
+<option value="FK">Falkland Islands (Malvinas)</option>
+<option value="FO">Faroe Islands</option>
+<option value="FJ">Fiji</option>
+<option value="FI">Finland</option>
+<option value="FR">France</option>
+<option value="GF">French Guiana</option>
+<option value="PF">French Polynesia</option>
+<option value="TF">French Southern Territories</option>
+<option value="GA">Gabon</option>
+<option value="GM">Gambia</option>
+<option value="GE">Georgia</option>
+<option value="DE">Germany</option>
+<option value="GH">Ghana</option>
+<option value="GI">Gibraltar</option>
+<option value="GR">Greece</option>
+<option value="GL">Greenland</option>
+<option value="GD">Grenada</option>
+<option value="GP">Guadeloupe</option>
+<option value="GU">Guam</option>
+<option value="GT">Guatemala</option>
+<option value="GG">Guernsey</option>
+<option value="GN">Guinea</option>
+<option value="GW">Guinea-Bissau</option>
+<option value="GY">Guyana</option>
+<option value="HT">Haiti</option>
+<option value="HM">Heard Island and McDonald Islands</option>
+<option value="VA">Holy See (Vatican City State)</option>
+<option value="HN">Honduras</option>
+<option value="HK">Hong Kong</option>
+<option value="HU">Hungary</option>
+<option value="IS">Iceland</option>
+<option value="IN">India</option>
+<option value="ID">Indonesia</option>
+<option value="IR">Iran, Islamic Republic of</option>
+<option value="IQ">Iraq</option>
+<option value="IE">Ireland</option>
+<option value="IM">Isle of Man</option>
+<option value="IL">Israel</option>
+<option value="IT">Italy</option>
+<option value="JM">Jamaica</option>
+<option value="JP" selected="selected">Japan</option>
+<option value="JE">Jersey</option>
+<option value="JO">Jordan</option>
+<option value="KZ">Kazakhstan</option>
+<option value="KE">Kenya</option>
+<option value="KI">Kiribati</option>
+<option value="KP">Korea, Democratic People&#039;s Republic of</option>
+<option value="KR">Korea, Republic of</option>
+<option value="KW">Kuwait</option>
+<option value="KG">Kyrgyzstan</option>
+<option value="LA">Lao People&#039;s Democratic Republic</option>
+<option value="LV">Latvia</option>
+<option value="LB">Lebanon</option>
+<option value="LS">Lesotho</option>
+<option value="LR">Liberia</option>
+<option value="LY">Libyan Arab Jamahiriya</option>
+<option value="LI">Liechtenstein</option>
+<option value="LT">Lithuania</option>
+<option value="LU">Luxembourg</option>
+<option value="MO">Macao</option>
+<option value="MK">Macedonia, the former Yugoslav Republic of</option>
+<option value="MG">Madagascar</option>
+<option value="MW">Malawi</option>
+<option value="MY">Malaysia</option>
+<option value="MV">Maldives</option>
+<option value="ML">Mali</option>
+<option value="MT">Malta</option>
+<option value="MH">Marshall Islands</option>
+<option value="MQ">Martinique</option>
+<option value="MR">Mauritania</option>
+<option value="MU">Mauritius</option>
+<option value="YT">Mayotte</option>
+<option value="MX">Mexico</option>
+<option value="FM">Micronesia, Federated States of</option>
+<option value="MD">Moldova, Republic of</option>
+<option value="MC">Monaco</option>
+<option value="MN">Mongolia</option>
+<option value="ME">Montenegro</option>
+<option value="MS">Montserrat</option>
+<option value="MA">Morocco</option>
+<option value="MZ">Mozambique</option>
+<option value="MM">Myanmar</option>
+<option value="NA">Namibia</option>
+<option value="NR">Nauru</option>
+<option value="NP">Nepal</option>
+<option value="NL">Netherlands</option>
+<option value="AN">Netherlands Antilles</option>
+<option value="NC">New Caledonia</option>
+<option value="NZ">New Zealand</option>
+<option value="NI">Nicaragua</option>
+<option value="NE">Niger</option>
+<option value="NG">Nigeria</option>
+<option value="NU">Niue</option>
+<option value="NF">Norfolk Island</option>
+<option value="MP">Northern Mariana Islands</option>
+<option value="NO">Norway</option>
+<option value="OM">Oman</option>
+<option value="PK">Pakistan</option>
+<option value="PW">Palau</option>
+<option value="PS">Palestinian Territory, Occupied</option>
+<option value="PA">Panama</option>
+<option value="PG">Papua New Guinea</option>
+<option value="PY">Paraguay</option>
+<option value="PE">Peru</option>
+<option value="PH">Philippines</option>
+<option value="PN">Pitcairn</option>
+<option value="PL">Poland</option>
+<option value="PT">Portugal</option>
+<option value="PR">Puerto Rico</option>
+<option value="QA">Qatar</option>
+<option value="RE">Réunion</option>
+<option value="RO">Romania</option>
+<option value="RU">Russian Federation</option>
+<option value="RW">Rwanda</option>
+<option value="SH">Saint Helena</option>
+<option value="KN">Saint Kitts and Nevis</option>
+<option value="LC">Saint Lucia</option>
+<option value="PM">Saint Pierre and Miquelon</option>
+<option value="VC">Saint Vincent and the Grenadines</option>
+<option value="WS">Samoa</option>
+<option value="SM">San Marino</option>
+<option value="ST">Sao Tome and Principe</option>
+<option value="SA">Saudi Arabia</option>
+<option value="SN">Senegal</option>
+<option value="RS">Serbia</option>
+<option value="SC">Seychelles</option>
+<option value="SL">Sierra Leone</option>
+<option value="SG">Singapore</option>
+<option value="SK">Slovakia</option>
+<option value="SI">Slovenia</option>
+<option value="SB">Solomon Islands</option>
+<option value="SO">Somalia</option>
+<option value="ZA">South Africa</option>
+<option value="GS">South Georgia and the South Sandwich Islands</option>
+<option value="ES">Spain</option>
+<option value="LK">Sri Lanka</option>
+<option value="SD">Sudan</option>
+<option value="SR">Suriname</option>
+<option value="SJ">Svalbard and Jan Mayen</option>
+<option value="SZ">Swaziland</option>
+<option value="SE">Sweden</option>
+<option value="CH">Switzerland</option>
+<option value="SY">Syrian Arab Republic</option>
+<option value="TW">Taiwan, Province of China</option>
+<option value="TJ">Tajikistan</option>
+<option value="TZ">Tanzania, United Republic of</option>
+<option value="TH">Thailand</option>
+<option value="TL">Timor-Leste</option>
+<option value="TG">Togo</option>
+<option value="TK">Tokelau</option>
+<option value="TO">Tonga</option>
+<option value="TT">Trinidad and Tobago</option>
+<option value="TN">Tunisia</option>
+<option value="TR">Turkey</option>
+<option value="TM">Turkmenistan</option>
+<option value="TC">Turks and Caicos Islands</option>
+<option value="TV">Tuvalu</option>
+<option value="UG">Uganda</option>
+<option value="UA">Ukraine</option>
+<option value="AE">United Arab Emirates</option>
+<option value="GB">United Kingdom</option>
+<option value="US">United States</option>
+<option value="UM">United States Minor Outlying Islands</option>
+<option value="UY">Uruguay</option>
+<option value="UZ">Uzbekistan</option>
+<option value="VU">Vanuatu</option>
+<option value="VE">Venezuela</option>
+<option value="VN">Viet Nam</option>
+<option value="VG">Virgin Islands, British</option>
+<option value="VI">Virgin Islands, U.S.</option>
+<option value="WF">Wallis and Futuna</option>
+<option value="EH">Western Sahara</option>
+<option value="YE">Yemen</option>
+<option value="ZM">Zambia</option>
+<option value="ZW">Zimbabwe</option>
+</select></div>	</fieldset>
+<div class="submit"><input type="submit" value="次へ &gt;" /></div><fieldset style="display:none;"><input type="hidden" name="data[_Token][fields]" value="fc0b4c720b22aaf9665645880b6fe890712ee71c%3An%3A0%3A%7B%7D" id="TokenFields63905363" /></fieldset></form></div>
+	</div>
+</div>
+	</div>
+	<div class="sponsors">
+		<p class="by">
+	<div class="border border-left">&nbsp;</div>
+	<span class="by">Proudly Sponsored By</span>
+	<div class="border border-right">&nbsp;</div>
+</p>
+<div class="sponsor-images">
+
+
+	<a href="http://cakedc.com"><img src="/themed/tokyo09/img/sponsors/cake_development_corporation.png" width="200" height="69" class="cakedc" alt="" /></a>
+        <br />
+    <div class="border-left">
+	<a href="http://www.e-2.co.jp/index.html"><img src="/themed/tokyo09/img/sponsors/e2_200px.png" width="200" height="99" alt="" /></a>	<br />
+	<a href="http://www.e-2.co.jp/index.html">株式会社 E2</a>	<br /><br />
+	<a href="http://fusic.co.jp/"><img src="/themed/tokyo09/img/sponsors/fusic_logo.png" width="200" height="100" alt="" /></a>	<br />
+	<a href="http://fusic.co.jp/">株式会社 Fusic</a>	<br /><br />
+	<a href="http://www.affilorama.com/"><img src="/themed/tokyo09/img/sponsors/affilorama_200px.jpg" width="200" height="40" alt="" /></a>	<br />
+	<a href="http://www.affilorama.com/">Affiliate Marketing</a>        <br /><br />
+	<a href="http://www.contents-one.co.jp/"><img src="/themed/tokyo09/img/sponsors/contentsone_200px.jpg" alt="" /></a>	<br />
+	<a href="http://www.contents-one.co.jp/">株式会社コンテンツワン</a>		<br /><br />
+    </div>
+
+    <div class="border-right">
+	<a href="http://www.1x1.jp/"><img src="/themed/tokyo09/img/sponsors/1x1_200px.png" width="200" height="95" alt="" /></a>	<br />
+	<a href="http://www.1x1.jp/">１ｘ１株式会社</a>	<br /><br />
+	<a href="http://www.hituji.jp/"><img src="/themed/tokyo09/img/sponsors/hituji-logo.gif" width="200" height="40" alt="" /></a>	<br />
+	<a href="http://www.hituji-inc.co.jp/">ひつじインキュベーション・スクウェア</a>
+
+        <br /><br />
+	<a href="http://www.mitsue.co.jp/"><img src="/themed/tokyo09/img/sponsors/mitsue_links.gif" alt="" /></a>	<br />
+	<a href="http://www.mitsue.co.jp/">株式会社 ミツエーリンクス</a>        <br /><br />
+	<a href="http://www.esm.co.jp/"><img src="/themed/tokyo09/img/sponsors/eiwa-logo.gif" alt="" /></a>	<br />
+	<a href="http://www.esm.co.jp/">株式会社 永和システムマネジメント</a>		<br /><br />
+   </div>
+
+	</p>
+</div>
+	</div>
+	<div class="footer">
+				
+		<a href="/pages/badges" class="important">Badges and Banners: Help Promote CakeMatsuri</a>		<br />
+		&copy; 2009, <a href="http://cakephp.jp">CakePHP users in japan</a>		- Powered by <a href="http://cakephp.org">CakePHP</a> 1.2.4.8284	</div>
+</div>
+<script type="text/javascript">
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+	try {
+		var pageTracker = _gat._getTracker("UA-1296428-3");
+		pageTracker._trackPageview();
+	} catch(err) {
+	}
+</script>
+</body>
+</html>
